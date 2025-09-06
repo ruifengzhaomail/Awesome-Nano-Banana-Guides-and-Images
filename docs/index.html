@@ -81,4 +81,79 @@
       return list.map((x, i) => ({
         id:    x.id || x.slug || x.title || `case${String(i+1).padStart(2,'0')}`,
         title: x.title || x.name || `Showcase ${i+1}`,
-        tags:  Array.isArray(x.tag
+        tags:  Array.isArray(x.tags) ? x.tags : (x.tag ? [String(x.tag)] : []),
+      }));
+    }
+
+    function render(list) {
+      grid.innerHTML = '';
+      const frag = document.createDocumentFragment();
+      for (const item of list) {
+        const node = tpl.content.cloneNode(true);
+        const img  = node.querySelector('img');
+        const title= node.querySelector('.title');
+        const tags = node.querySelector('.tags');
+
+        title.textContent = item.title || item.id || 'Showcase';
+
+        (item.tags || []).slice(0,6).forEach(t=>{
+          const b = document.createElement('span');
+          b.className = 'tag';
+          b.textContent = t;
+          tags.appendChild(b);
+        });
+
+        const id = item.id || `case${Math.random().toString(36).slice(2,7)}`;
+        img.src = imgSrc(id, 'after');
+        img.onerror = () => {
+          img.onerror = () => { img.src = PLACEHOLDER; };
+          img.src = imgSrc(id, 'before');
+        };
+
+        frag.appendChild(node);
+      }
+      grid.appendChild(frag);
+    }
+
+    async function boot() {
+      let usedFallback = false;
+      try {
+        const res = await fetch(CASES_URL, { cache:'no-store' });
+        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+        let data = await res.json();
+        data = normalizeCases(data);
+        if (!data.length) throw new Error('cases.json empty or invalid structure');
+        all = safeMap(data);
+      } catch (err) {
+        console.warn('[Gallery] cases.json load failed:', err);
+        // 占位 12 条，页面也不会空
+        all = Array.from({length:12}, (_,i)=>({
+          id:`case${String(i+1).padStart(2,'0')}`,
+          title:`Showcase ${i+1}`,
+          tags:['pending']
+        }));
+        usedFallback = true;
+      }
+      render(all);
+      if (usedFallback) {
+        note.style.display = '';
+        note.textContent = '提示：未找到 docs/cases.json 或数据格式异常，已显示占位内容。'
+          + '请确认已运行 “Pages sync (data + images)” 工作流（会把 data/cases.json 同步到 docs/）。';
+      }
+    }
+
+    search.addEventListener('input', e=>{
+      const kw = e.target.value.trim().toLowerCase();
+      if (!kw) return render(all);
+      const hit = all.filter(x =>
+        (x.title||'').toLowerCase().includes(kw) ||
+        (x.id||'').toLowerCase().includes(kw) ||
+        (x.tags||[]).some(t => (t+'').toLowerCase().includes(kw))
+      );
+      render(hit);
+    });
+
+    boot();
+  </script>
+</body>
+</html>
