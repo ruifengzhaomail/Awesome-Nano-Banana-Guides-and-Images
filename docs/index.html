@@ -37,4 +37,152 @@
     <div class="card">
       <img loading="lazy" alt="preview" />
       <h3 class="title"></h3>
-      <div class="tags"></d
+      <div class="tags"></div>
+    </div>
+  </template>
+
+  <script>
+    const BASE = '.';                       // /docs 下相对路径
+    const CASES_URL = BASE + '/cases.json'; // 工作流会把 data/cases.json 同步到 docs/
+    const PLACEHOLDER = 'data:image/svg+xml;utf8,'+encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+         <rect width="100%" height="100%" fill="#f3f3f3"/>
+         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#aaa" font-size="20">image pending</text>
+       </svg>`);
+
+    const grid  = document.getElementById('grid');
+    const note  = document.getElementById('note');
+    const search= document.getElementById('search');
+    const tpl   = document.getElementById('card-tpl');
+    let all = [];
+
+    // ---------- 工具 ----------
+    const slug = s => String(s||'').toLowerCase()
+      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/-+/g,'-');
+    const pad = (n,len=2)=>String(n).padStart(len,'0');
+    const uniq = arr => [...new Set(arr.filter(Boolean))];
+
+    function normalizeCases(raw){
+      try{
+        if(Array.isArray(raw)) return raw;
+        if(raw && typeof raw==='object'){
+          for(const k of ['cases','items','data','list']) if(Array.isArray(raw[k])) return raw[k];
+        }
+      }catch{}
+      return [];
+    }
+    function safeMap(list){
+      return list.map((x,i)=>({
+        id: x.id || x.slug || `case${pad(i+1)}`,
+        title: x.title || x.name || x.id || `Showcase ${i+1}`,
+        tags: Array.isArray(x.tags)?x.tags : (x.tag?[String(x.tag)]:[]),
+        images: Array.isArray(x.images)?x.images:[],
+      }));
+    }
+
+    function buildTryList(item){
+      const tries = [];
+
+      // 1) 数据里提供了绝对地址：优先用
+      const first = item.images && item.images[0];
+      const url = first && (first.src || first.url || first.href);
+      if(url && /^https?:\/\//i.test(url)) tries.push(url);
+
+      // 2) 根据 id/title 猜本地文件名
+      const baseFromId = slug(item.id);
+      const baseFromTitle = slug(item.title);
+      const numInId = String(item.id||'').match(/\d+/);
+      const numInTitle = String(item.title||'').match(/\d+/);
+      const n = numInId ? parseInt(numInId[0],10) : (numInTitle ? parseInt(numInTitle[0],10) : null);
+
+      const candidates = uniq([
+        baseFromId, baseFromTitle,
+        n!=null ? `case${pad(n,2)}` : '',
+        n!=null ? `case${pad(n,3)}` : '',
+      ]);
+
+      const EXT = ['png','jpg','jpeg','webp'];
+      const WHICH = ['after','before'];
+      for(const base of candidates){
+        for(const w of WHICH){
+          for(const ext of EXT){
+            tries.push(`${BASE}/images/samples/${base}-${w}.${ext}`);
+          }
+        }
+      }
+      return tries;
+    }
+
+    function loadWithFallback(img, sources){
+      img.dataset.left = JSON.stringify(sources);
+      const setNext = () => {
+        const arr = JSON.parse(img.dataset.left||'[]');
+        const next = arr.shift();
+        img.dataset.left = JSON.stringify(arr);
+        img.src = next || PLACEHOLDER;
+      };
+      img.onerror = setNext;
+      setNext();
+    }
+
+    function render(list){
+      grid.innerHTML='';
+      const frag = document.createDocumentFragment();
+      for(const it of list){
+        const node  = tpl.content.cloneNode(true);
+        const img   = node.querySelector('img');
+        const title = node.querySelector('.title');
+        const tags  = node.querySelector('.tags');
+
+        title.textContent = it.title || it.id || 'Showcase';
+        (it.tags||[]).slice(0,6).forEach(t=>{
+          const b = document.createElement('span');
+          b.className='tag'; b.textContent=t; tags.appendChild(b);
+        });
+
+        const tries = buildTryList(it);
+        if(tries.length===0){ img.src = PLACEHOLDER; }
+        else { loadWithFallback(img, tries); }
+
+        frag.appendChild(node);
+      }
+      grid.appendChild(frag);
+    }
+
+    async function boot(){
+      let usedFallback=false;
+      try{
+        const res = await fetch(CASES_URL,{cache:'no-store'});
+        if(!res.ok) throw new Error(res.status+' '+res.statusText);
+        let data = await res.json();
+        data = normalizeCases(data);
+        if(!data.length) throw new Error('cases.json empty or invalid structure');
+        all = safeMap(data);
+      }catch(e){
+        console.warn('[Gallery] cases.json load failed:', e);
+        // 占位 12 条
+        all = Array.from({length:12},(_,i)=>({ id:`case${pad(i+1)}`, title:`Showcase ${i+1}`, tags:['demo','nbg'] }));
+        usedFallback = true;
+      }
+      render(all);
+      if(usedFallback){
+        note.style.display='';
+        note.textContent='提示：未找到 docs/cases.json 或数据格式异常，已显示占位内容。'
+          +'确保已运行 “Pages sync (data + images)” 工作流把 data/cases.json 同步到 docs/。';
+      }
+    }
+
+    search.addEventListener('input',e=>{
+      const kw = e.target.value.trim().toLowerCase();
+      if(!kw) return render(all);
+      const hit = all.filter(x =>
+        (x.title||'').toLowerCase().includes(kw) ||
+        (x.id||'').toLowerCase().includes(kw) ||
+        (x.tags||[]).some(t=>(t+'').toLowerCase().includes(kw)));
+      render(hit);
+    });
+
+    boot();
+  </script>
+</body>
+</html>
