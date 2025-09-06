@@ -7,8 +7,7 @@ on:
     paths:
       - 'data/**'
       - 'images/**'
-      - 'docs/app.js'
-      - 'docs/index.html'
+      - 'docs/**'
       - '.github/workflows/pages-sync.yml'
 
 jobs:
@@ -17,23 +16,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sync data + images into docs
+      - name: Prepare docs assets
         run: |
+          set -e
           mkdir -p docs/images
+          # 1) 同步结构化数据到 docs 根
           cp -f data/cases.json docs/cases.json
+          # 2) 镜像 images/ 到 docs/images/ （保持同名层级）
           rsync -a --delete images/ docs/images/
-          # 兜底占位图（万一忘了上传）
-          if [ ! -f docs/images/placeholder.svg ]; then
-            cat > docs/images/placeholder.svg <<'SVG'
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="100%" height="100%" fill="#f2f2f2"/><text x="50%" y="50%" font-size="24" text-anchor="middle" fill="#999">preview</text></svg>
-SVG
-          fi
 
-      # 下面两步只在你把 Pages 设置为 “GitHub Actions” 源时需要；
-      # 如果你用的是 “/docs” 作为 Pages 源，可以删掉这两步。
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Commit & push changes to docs
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          path: docs
-      - name: Deploy to Pages
-        uses: actions/deploy-pages@v4
+          commit_message: "chore(pages): sync data & images to docs"
+          branch: main
