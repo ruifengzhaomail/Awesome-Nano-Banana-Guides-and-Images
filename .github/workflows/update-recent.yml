@@ -1,0 +1,32 @@
+name: Update recent block
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/cases.json'
+  schedule:
+    - cron: '0 2 * * *'  # daily 02:00 UTC
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Run script
+        run: |
+          python scripts/update_recent.py
+      - name: Commit changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "docs: update recent block (auto)"
+            git push
+          else
+            echo "No changes to commit."
