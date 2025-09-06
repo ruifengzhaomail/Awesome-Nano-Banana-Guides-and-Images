@@ -5,26 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Awesome Nano-banana — Gallery</title>
   <meta name="description" content="Nano-banana（Gemini 2.5 Flash Image）精选案例图库：对比图 + 提示词，结构化可复用。">
-
   <style>
-    :root { --fg:#111; --muted:#666; --border:#eee; --bg:#fff; --pill:#f5f5f5; }
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg);
-      font:16px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial; }
-    header{ max-width:1120px; margin:24px auto 12px; padding:0 16px; }
-    h1{ margin:0 0 4px; font-size:28px; }
-    .sub{ margin:0 0 12px; color:var(--muted); }
-    #search{ width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:12px; outline:none; }
-    .grid{ max-width:1120px; margin:16px auto 40px; padding:0 16px;
-      display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); }
-    .card{ border:1px solid var(--border); border-radius:14px; padding:10px; background:#fff;
-      box-shadow:0 1px 2px rgba(0,0,0,.03); transition:transform .15s ease; }
-    .card:hover{ transform: translateY(-2px); }
-    .card img{ width:100%; height:160px; object-fit:cover; display:block; border-radius:10px; background:#fafafa; }
-    .card .title{ margin:10px 2px 6px; font-size:16px; }
-    .tags{ display:flex; flex-wrap:wrap; gap:6px; }
-    .tags .tag{ font-size:12px; background:var(--pill); padding:4px 8px; border-radius:999px; color:#333; border:1px solid var(--border); }
-    .note{ max-width:1120px; margin:8px auto 0; padding:0 16px; color:#b35a00; font-size:14px; }
+    :root{--fg:#111;--muted:#666;--border:#eee;--bg:#fff;--pill:#f5f5f5}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial}
+    header{max-width:1120px;margin:24px auto 12px;padding:0 16px}
+    h1{margin:0 0 4px;font-size:28px}
+    .sub{margin:0 0 12px;color:var(--muted)}
+    #search{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;outline:none}
+    .grid{max-width:1120px;margin:16px auto 40px;padding:0 16px;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+    .card{border:1px solid var(--border);border-radius:14px;padding:10px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.03);transition:transform .15s ease}
+    .card:hover{transform:translateY(-2px)}
+    .card img{width:100%;height:160px;object-fit:cover;display:block;border-radius:10px;background:#fafafa}
+    .title{margin:10px 2px 6px;font-size:16px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:12px;background:var(--pill);padding:4px 8px;border-radius:999px;color:#333;border:1px solid var(--border)}
+    .note{max-width:1120px;margin:8px auto 0;padding:0 16px;color:#b35a00;font-size:14px}
   </style>
 </head>
 <body>
@@ -41,119 +37,4 @@
     <div class="card">
       <img loading="lazy" alt="preview" />
       <h3 class="title"></h3>
-      <div class="tags"></div>
-    </div>
-  </template>
-
-  <script>
-    // ---- 基础与占位 ----
-    const BASE = '.';                       // /docs 下就用相对路径
-    const CASES_URL = BASE + '/cases.json'; // 工作流会把 data/cases.json 同步到 docs/cases.json
-
-    const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-      `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
-        <rect width="100%" height="100%" fill="#f3f3f3"/>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#aaa" font-size="20">image pending</text>
-       </svg>`);
-
-    const tpl   = document.getElementById('card-tpl');
-    const grid  = document.getElementById('grid');
-    const note  = document.getElementById('note');
-    const search= document.getElementById('search');
-
-    let all = [];
-
-    const imgSrc = (id, which='after') => `${BASE}/images/samples/${id}-${which}.png`;
-
-    function normalizeCases(raw) {
-      // 支持数组 / 对象（取常见字段）/ 非法时返回空数组
-      try {
-        if (Array.isArray(raw)) return raw;
-        if (typeof raw === 'object' && raw) {
-          const keys = ['cases','items','data','list'];
-          for (const k of keys) if (Array.isArray(raw[k])) return raw[k];
-        }
-      } catch {}
-      return [];
-    }
-
-    function safeMap(list) {
-      return list.map((x, i) => ({
-        id:    x.id || x.slug || x.title || `case${String(i+1).padStart(2,'0')}`,
-        title: x.title || x.name || `Showcase ${i+1}`,
-        tags:  Array.isArray(x.tags) ? x.tags : (x.tag ? [String(x.tag)] : []),
-      }));
-    }
-
-    function render(list) {
-      grid.innerHTML = '';
-      const frag = document.createDocumentFragment();
-      for (const item of list) {
-        const node = tpl.content.cloneNode(true);
-        const img  = node.querySelector('img');
-        const title= node.querySelector('.title');
-        const tags = node.querySelector('.tags');
-
-        title.textContent = item.title || item.id || 'Showcase';
-
-        (item.tags || []).slice(0,6).forEach(t=>{
-          const b = document.createElement('span');
-          b.className = 'tag';
-          b.textContent = t;
-          tags.appendChild(b);
-        });
-
-        const id = item.id || `case${Math.random().toString(36).slice(2,7)}`;
-        img.src = imgSrc(id, 'after');
-        img.onerror = () => {
-          img.onerror = () => { img.src = PLACEHOLDER; };
-          img.src = imgSrc(id, 'before');
-        };
-
-        frag.appendChild(node);
-      }
-      grid.appendChild(frag);
-    }
-
-    async function boot() {
-      let usedFallback = false;
-      try {
-        const res = await fetch(CASES_URL, { cache:'no-store' });
-        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-        let data = await res.json();
-        data = normalizeCases(data);
-        if (!data.length) throw new Error('cases.json empty or invalid structure');
-        all = safeMap(data);
-      } catch (err) {
-        console.warn('[Gallery] cases.json load failed:', err);
-        // 占位 12 条，页面也不会空
-        all = Array.from({length:12}, (_,i)=>({
-          id:`case${String(i+1).padStart(2,'0')}`,
-          title:`Showcase ${i+1}`,
-          tags:['pending']
-        }));
-        usedFallback = true;
-      }
-      render(all);
-      if (usedFallback) {
-        note.style.display = '';
-        note.textContent = '提示：未找到 docs/cases.json 或数据格式异常，已显示占位内容。'
-          + '请确认已运行 “Pages sync (data + images)” 工作流（会把 data/cases.json 同步到 docs/）。';
-      }
-    }
-
-    search.addEventListener('input', e=>{
-      const kw = e.target.value.trim().toLowerCase();
-      if (!kw) return render(all);
-      const hit = all.filter(x =>
-        (x.title||'').toLowerCase().includes(kw) ||
-        (x.id||'').toLowerCase().includes(kw) ||
-        (x.tags||[]).some(t => (t+'').toLowerCase().includes(kw))
-      );
-      render(hit);
-    });
-
-    boot();
-  </script>
-</body>
-</html>
+      <div class="tags"></d
