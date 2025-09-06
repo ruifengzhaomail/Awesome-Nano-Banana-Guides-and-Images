@@ -1,0 +1,43 @@
+name: Pages sync (data + images)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/**'
+      - 'images/**'
+      - 'docs/**'
+      - '!docs/cases.json'
+      - '!docs/images/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync data & images into docs/
+        run: |
+          mkdir -p docs
+          # 1) 同步结构化数据
+          cp -f data/cases.json docs/cases.json
+          # 2) 同步图片到 docs/images/
+          rm -rf docs/images
+          mkdir -p docs/images
+          cp -R images/* docs/images/
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain docs)" ]; then
+            git add docs/cases.json docs/images
+            git commit -m "chore: sync docs assets (cases.json + images)"
+            git push
+          else
+            echo "No changes."
+          fi
