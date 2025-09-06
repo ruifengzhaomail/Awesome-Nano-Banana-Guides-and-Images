@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Data](https://img.shields.io/badge/data-CC%20BY%204.0-green?style=flat-square)](LICENSE)
 
+**Latest release:** [v0.1.0](../../releases/tag/v0.1.0)
+
 > **非官方**社区整理。聚合 *Nano-banana（Gemini 2.5 Flash Image）* 的 **结构化案例 / 提示词 / 对比**，配套 **Prompt 包** 与 **GitHub Pages 图库**（零后端，提交即更新）。
 
 **主站**：https://nanobananaguide.ai  
