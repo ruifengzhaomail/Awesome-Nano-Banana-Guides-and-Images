@@ -1,20 +1,15 @@
 name: Pages sync (data + images)
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
       - 'data/**'
       - 'images/**'
-      - 'docs/**'
-      - '!docs/cases.json'
-      - '!docs/images/**'
-  schedule:
-    - cron: '0 3 * * *'   # 每天 03:00 UTC 自动同步一次（可调）
-  workflow_dispatch:
-
-permissions:
-  contents: write
+      - 'docs/app.js'
+      - 'docs/index.html'
+      - '.github/workflows/pages-sync.yml'
 
 jobs:
   sync:
@@ -22,42 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # ① 拉取上游仓库的示例图片（如果你本地 images 为空，就用上游的）
-      - name: Pull sample images from upstream
+      - name: Sync data + images into docs
         run: |
-          set -e
-          mkdir -p images
-          # 如果本仓库 images 目录基本为空，则从上游补齐
-          COUNT=$(ls -1 images 2>/dev/null | wc -l | tr -d ' ')
-          if [ "$COUNT" -lt 5 ]; then
-            echo "Local images/ is empty or small ($COUNT files). Fetching from upstream..."
-            git clone --depth 1 https://github.com/PicoTrex/Awesome-Nano-Banana-images.git upstream
-            rsync -a --delete upstream/images/ images/
-          else
-            echo "Local images/ has files ($COUNT). Skip pulling upstream."
-          fi
-          # 兜底占位图
-          mkdir -p images
-          echo '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect width="100%" height="100%" fill="#f2f2f2"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="24" fill="#999">no preview</text></svg>' > images/placeholder.svg
-
-      # ② 同步结构化数据 + 图片到 docs/
-      - name: Sync data & images into docs/
-        run: |
-          mkdir -p docs
-          cp -f data/cases.json docs/cases.json
-          rm -rf docs/images
           mkdir -p docs/images
-          rsync -a images/ docs/images/
-
-      # ③ 提交变更
-      - name: Commit & push if changed
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain docs images)" ]; then
-            git add docs/cases.json docs/images images || true
-            git commit -m "chore: sync docs assets (cases.json + images from upstream/local)"
-            git push
-          else
-            echo "No changes."
+          cp -f data/cases.json docs/cases.json
+          rsync -a --delete images/ docs/images/
+          # 兜底占位图（万一忘了上传）
+          if [ ! -f docs/images/placeholder.svg ]; then
+            cat > docs/images/placeholder.svg <<'SVG'
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="100%" height="100%" fill="#f2f2f2"/><text x="50%" y="50%" font-size="24" text-anchor="middle" fill="#999">preview</text></svg>
+SVG
           fi
+
+      # 下面两步只在你把 Pages 设置为 “GitHub Actions” 源时需要；
+      # 如果你用的是 “/docs” 作为 Pages 源，可以删掉这两步。
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
