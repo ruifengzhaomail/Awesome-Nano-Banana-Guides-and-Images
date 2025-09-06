@@ -2,11 +2,11 @@
   "_schema": "see CONTRIBUTING.md",
   "items": [
     {
-      "id": "demo-01",
-      "title": "Demo case 1",
+      "id": "case-001",
+      "title": "Showcase 1",
       "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -25,15 +25,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-28"
     },
     {
-      "id": "demo-02",
-      "title": "Demo case 2",
-      "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-002",
+      "title": "Showcase 2",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -52,15 +54,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-31"
     },
     {
-      "id": "demo-03",
-      "title": "Demo case 3",
-      "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-003",
+      "title": "Showcase 3",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -79,15 +83,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-01"
     },
     {
-      "id": "demo-04",
-      "title": "Demo case 4",
-      "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-004",
+      "title": "Showcase 4",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -106,15 +112,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-04"
     },
     {
-      "id": "demo-05",
-      "title": "Demo case 5",
-      "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-005",
+      "title": "Showcase 5",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -133,15 +141,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-24"
     },
     {
-      "id": "demo-06",
-      "title": "Demo case 6",
-      "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-006",
+      "title": "Showcase 6",
+      "task": "pet",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -160,15 +170,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-26"
     },
     {
-      "id": "demo-07",
-      "title": "Demo case 7",
-      "task": "consistency",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-007",
+      "title": "Showcase 7",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -187,15 +199,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-30"
     },
     {
-      "id": "demo-08",
-      "title": "Demo case 8",
-      "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-008",
+      "title": "Showcase 8",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -214,15 +228,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-26"
     },
     {
-      "id": "demo-09",
-      "title": "Demo case 9",
-      "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-009",
+      "title": "Showcase 9",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -241,15 +257,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-30"
     },
     {
-      "id": "demo-10",
-      "title": "Demo case 10",
-      "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-010",
+      "title": "Showcase 10",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -268,15 +286,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-27"
     },
     {
-      "id": "demo-11",
-      "title": "Demo case 11",
+      "id": "case-011",
+      "title": "Showcase 11",
       "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -295,15 +315,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-29"
     },
     {
-      "id": "demo-12",
-      "title": "Demo case 12",
-      "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-012",
+      "title": "Showcase 12",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -322,15 +344,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-05"
     },
     {
-      "id": "demo-13",
-      "title": "Demo case 13",
-      "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-013",
+      "title": "Showcase 13",
+      "task": "pet",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -349,15 +373,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-25"
     },
     {
-      "id": "demo-14",
-      "title": "Demo case 14",
-      "task": "ecommerce",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-014",
+      "title": "Showcase 14",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -376,15 +402,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-31"
     },
     {
-      "id": "demo-15",
-      "title": "Demo case 15",
-      "task": "pet",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-015",
+      "title": "Showcase 15",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -403,15 +431,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-04"
     },
     {
-      "id": "demo-16",
-      "title": "Demo case 16",
-      "task": "pet",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-016",
+      "title": "Showcase 16",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -430,15 +460,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-27"
     },
     {
-      "id": "demo-17",
-      "title": "Demo case 17",
-      "task": "pet",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-017",
+      "title": "Showcase 17",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -457,15 +489,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-25"
     },
     {
-      "id": "demo-18",
-      "title": "Demo case 18",
-      "task": "pet",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-018",
+      "title": "Showcase 18",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -484,15 +518,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-02"
     },
     {
-      "id": "demo-19",
-      "title": "Demo case 19",
-      "task": "pet",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "id": "case-019",
+      "title": "Showcase 19",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -511,15 +547,17 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-07"
     },
     {
-      "id": "demo-20",
-      "title": "Demo case 20",
+      "id": "case-020",
+      "title": "Showcase 20",
       "task": "pet",
-      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
-      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
       "author": "nanobananaguide.ai",
       "license": "CC BY 4.0",
       "refs": [
@@ -538,8 +576,880 @@
         }
       ],
       "tags": [
-        "demo"
-      ]
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-29"
+    },
+    {
+      "id": "case-021",
+      "title": "Showcase 21",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case21-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case21-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-28"
+    },
+    {
+      "id": "case-022",
+      "title": "Showcase 22",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case22-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case22-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-04"
+    },
+    {
+      "id": "case-023",
+      "title": "Showcase 23",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case23-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case23-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-04"
+    },
+    {
+      "id": "case-024",
+      "title": "Showcase 24",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case24-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case24-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-24"
+    },
+    {
+      "id": "case-025",
+      "title": "Showcase 25",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case25-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case25-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-27"
+    },
+    {
+      "id": "case-026",
+      "title": "Showcase 26",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case26-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case26-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-24"
+    },
+    {
+      "id": "case-027",
+      "title": "Showcase 27",
+      "task": "pet",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case27-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case27-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-01"
+    },
+    {
+      "id": "case-028",
+      "title": "Showcase 28",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case28-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case28-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-01"
+    },
+    {
+      "id": "case-029",
+      "title": "Showcase 29",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case29-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case29-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-03"
+    },
+    {
+      "id": "case-030",
+      "title": "Showcase 30",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case30-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case30-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-25"
+    },
+    {
+      "id": "case-031",
+      "title": "Showcase 31",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case31-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case31-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-02"
+    },
+    {
+      "id": "case-032",
+      "title": "Showcase 32",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case32-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case32-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-27"
+    },
+    {
+      "id": "case-033",
+      "title": "Showcase 33",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case33-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case33-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-07"
+    },
+    {
+      "id": "case-034",
+      "title": "Showcase 34",
+      "task": "pet",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case34-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case34-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-26"
+    },
+    {
+      "id": "case-035",
+      "title": "Showcase 35",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case35-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case35-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-01"
+    },
+    {
+      "id": "case-036",
+      "title": "Showcase 36",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case36-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case36-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-26"
+    },
+    {
+      "id": "case-037",
+      "title": "Showcase 37",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case37-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case37-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-30"
+    },
+    {
+      "id": "case-038",
+      "title": "Showcase 38",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case38-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case38-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-01"
+    },
+    {
+      "id": "case-039",
+      "title": "Showcase 39",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case39-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case39-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-30"
+    },
+    {
+      "id": "case-040",
+      "title": "Showcase 40",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case40-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case40-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-31"
+    },
+    {
+      "id": "case-041",
+      "title": "Showcase 41",
+      "task": "pet",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case41-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case41-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-28"
+    },
+    {
+      "id": "case-042",
+      "title": "Showcase 42",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case42-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case42-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-25"
+    },
+    {
+      "id": "case-043",
+      "title": "Showcase 43",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case43-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case43-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-05"
+    },
+    {
+      "id": "case-044",
+      "title": "Showcase 44",
+      "task": "fusion",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case44-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case44-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-07"
+    },
+    {
+      "id": "case-045",
+      "title": "Showcase 45",
+      "task": "editing",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case45-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case45-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-31"
+    },
+    {
+      "id": "case-046",
+      "title": "Showcase 46",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case46-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case46-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-04"
+    },
+    {
+      "id": "case-047",
+      "title": "Showcase 47",
+      "task": "space",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case47-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case47-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-05"
+    },
+    {
+      "id": "case-048",
+      "title": "Showcase 48",
+      "task": "pet",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case48-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case48-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-09-02"
+    },
+    {
+      "id": "case-049",
+      "title": "Showcase 49",
+      "task": "portrait",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case49-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case49-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-31"
+    },
+    {
+      "id": "case-050",
+      "title": "Showcase 50",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征，输出写实风格；暖光；适度景深。",
+      "prompt_en": "Keep subject identity; photorealistic; warm light; shallow depth of field.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case50-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case50-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo",
+        "nbg"
+      ],
+      "added_at": "2025-08-30"
     }
   ]
 }
