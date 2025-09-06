@@ -32,3 +32,92 @@ This repo ships **structured data (JSON)**, a **prompt pack**, and a **GitHub Pa
 
 ## 📦 What’s inside
 
+├─ data/
+│ └─ cases.json # Structured cases (ZH/EN prompts, tags, images, links)
+├─ docs/ # GitHub Pages gallery (reads docs/cases.json)
+│ ├─ index.html
+│ ├─ styles.css
+│ └─ app.js
+├─ images/samples/ # Placeholder images (Before/After)
+├─ prompts/
+│ └─ NB-100-Prompts.txt # Prompt pack (ZH/EN)
+├─ .github/
+│ ├─ workflows/pages-sync.yml # Sync data/cases.json → docs/cases.json on push
+│ └─ ISSUE/PR templates
+├─ README.md # Chinese README
+├─ README_en.md # This file
+├─ CONTRIBUTING.md
+└─ LICENSE
+
+
+---
+
+## 🧱 Data schema (excerpt)
+
+Each item in `data/cases.json`:
+
+```json
+{
+  "id": "unique-slug",
+  "title": "Short title",
+  "task": "consistency|fusion|editing|ecommerce|space|pet|portrait|other",
+  "prompt_zh": "中文 Prompt",
+  "prompt_en": "English prompt",
+  "author": "your-name or source handle",
+  "license": "CC BY 4.0 / Apache-2.0 / External link",
+  "refs": ["https://link.to/original/post"],
+  "images": [
+    {"src": "images/samples/slug-before.png", "alt": "before", "type": "before"},
+    {"src": "images/samples/slug-after.png",  "alt": "after",  "type": "after"}
+  ],
+  "tags": ["portrait","cafe","warm light"]
+}
+
+🙌 Contributing
+
+We welcome PRs!
+
+Fork → create a branch.
+
+Append your entry to data/cases.json
+ following the schema above.
+
+If you own the images, put them under images/<your-folder>/....
+
+Otherwise link externally and credit the author in refs.
+
+Open a Pull Request. The gallery will update automatically after merge.
+
+See CONTRIBUTING.md
+ for details and PR/Issue templates.
+
+🔄 Updates & Releases
+
+We periodically publish releases with updated datasets and prompts.
+
+Changelog lives in the Releases tab (e.g. v0.1.0: 20 initial cases + gallery + NB-100 prompts).
+
+🗺️ Roadmap
+
+ Grow to 100+ structured cases (multi-domain, bilingual).
+
+ Tag-based filters and sorting in the gallery.
+
+ Weekly digest that highlights new/updated entries.
+
+ More comparison sheets (Flux/GPT-Image/etc).
+
+⚖️ License
+
+Code & config: Apache-2.0
+
+Data (cases.json) & docs: CC BY 4.0
+
+Images: Follow per-file notices; for third-party content, keep external links only.
+
+🙏 Credits
+
+Thanks to the community for sharing prompts and cases.
+Questions or suggestions? Open an Issue
+ or start a Discussion
+.
