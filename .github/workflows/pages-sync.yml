@@ -20,9 +20,9 @@ jobs:
         run: |
           set -e
           mkdir -p docs/images
-          # 1) 同步结构化数据到 docs 根
+          # 同步结构化数据到 docs 根
           cp -f data/cases.json docs/cases.json
-          # 2) 镜像 images/ 到 docs/images/ （保持同名层级）
+          # 镜像 images/ 到 docs/images/（保持层级与文件名）
           rsync -a --delete images/ docs/images/
 
       - name: Commit & push changes to docs
