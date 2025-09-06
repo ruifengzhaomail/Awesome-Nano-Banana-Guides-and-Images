@@ -1,0 +1,545 @@
+{
+  "_schema": "see CONTRIBUTING.md",
+  "items": [
+    {
+      "id": "demo-01",
+      "title": "Demo case 1",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case01-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case01-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-02",
+      "title": "Demo case 2",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case02-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case02-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-03",
+      "title": "Demo case 3",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case03-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case03-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-04",
+      "title": "Demo case 4",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case04-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case04-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-05",
+      "title": "Demo case 5",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case05-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case05-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-06",
+      "title": "Demo case 6",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case06-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case06-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-07",
+      "title": "Demo case 7",
+      "task": "consistency",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case07-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case07-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-08",
+      "title": "Demo case 8",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case08-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case08-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-09",
+      "title": "Demo case 9",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case09-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case09-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-10",
+      "title": "Demo case 10",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case10-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case10-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-11",
+      "title": "Demo case 11",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case11-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case11-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-12",
+      "title": "Demo case 12",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case12-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case12-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-13",
+      "title": "Demo case 13",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case13-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case13-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-14",
+      "title": "Demo case 14",
+      "task": "ecommerce",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case14-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case14-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-15",
+      "title": "Demo case 15",
+      "task": "pet",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case15-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case15-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-16",
+      "title": "Demo case 16",
+      "task": "pet",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case16-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case16-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-17",
+      "title": "Demo case 17",
+      "task": "pet",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case17-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case17-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-18",
+      "title": "Demo case 18",
+      "task": "pet",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case18-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case18-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-19",
+      "title": "Demo case 19",
+      "task": "pet",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case19-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case19-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    },
+    {
+      "id": "demo-20",
+      "title": "Demo case 20",
+      "task": "pet",
+      "prompt_zh": "保持主体特征不变，将人物置于室内咖啡馆，阳光窗景，暖色调。",
+      "prompt_en": "Keep subject features unchanged; place the person in a cozy indoor cafe with bright window light and warm tones.",
+      "author": "nanobananaguide.ai",
+      "license": "CC BY 4.0",
+      "refs": [
+        "https://nanobananaguide.ai/tutorials/get-started"
+      ],
+      "images": [
+        {
+          "src": "images/samples/case20-before.png",
+          "alt": "before",
+          "type": "before"
+        },
+        {
+          "src": "images/samples/case20-after.png",
+          "alt": "after",
+          "type": "after"
+        }
+      ],
+      "tags": [
+        "demo"
+      ]
+    }
+  ]
+}
