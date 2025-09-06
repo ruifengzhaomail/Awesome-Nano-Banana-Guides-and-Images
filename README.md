@@ -13,8 +13,9 @@
 - 欢迎 PR（见《CONTRIBUTING.md》）。
 
 ## 🚀 快速开始
-- Gallery：**https://<your-username>.[[github.io](https://ruifengzhaomail.github.io/Awesome-Nano-Banana-Guides-and-Images/)](https://ruifengzhaomail.github.io/Awesome-Nano-Banana-Guides-and-Images/)/<your-repo>/**  
-- Prompt 包：[`/prompts/NB-100-Prompts.txt`](prompts/NB-100-Prompts.txt)  
+
+- Gallery：**https://ruifengzhaomail.github.io/Awesome-Nano-Banana-Guides-and-Images/**
+- Prompt 包：[`/prompts/NB-100-Prompts.txt`](prompts/NB-100-Prompts.txt)
 - 结构化数据：[`/data/cases.json`](data/cases.json)
 
 ## 🖼 图库
