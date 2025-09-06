@@ -5,7 +5,27 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Awesome Nano-banana — Gallery</title>
   <meta name="description" content="Nano-banana（Gemini 2.5 Flash Image）精选案例图库：对比图 + 提示词，结构化可复用。">
-  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    :root { --fg:#111; --muted:#666; --border:#eee; --bg:#fff; --pill:#f5f5f5; }
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg);
+      font:16px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial; }
+    header{ max-width:1120px; margin:24px auto 12px; padding:0 16px; }
+    h1{ margin:0 0 4px; font-size:28px; }
+    .sub{ margin:0 0 12px; color:var(--muted); }
+    #search{ width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:12px; outline:none; }
+    .grid{ max-width:1120px; margin:16px auto 40px; padding:0 16px;
+      display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); }
+    .card{ border:1px solid var(--border); border-radius:14px; padding:10px; background:#fff;
+      box-shadow:0 1px 2px rgba(0,0,0,.03); transition:transform .15s ease; }
+    .card:hover{ transform: translateY(-2px); }
+    .card img{ width:100%; height:160px; object-fit:cover; display:block; border-radius:10px; background:#fafafa; }
+    .card .title{ margin:10px 2px 6px; font-size:16px; }
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; }
+    .tags .tag{ font-size:12px; background:var(--pill); padding:4px 8px; border-radius:999px; color:#333; border:1px solid var(--border); }
+    .note{ max-width:1120px; margin:8px auto 0; padding:0 16px; color:#b35a00; font-size:14px; }
+  </style>
 </head>
 <body>
   <header>
@@ -14,6 +34,7 @@
     <input id="search" placeholder="搜索关键词 / Search…" />
   </header>
 
+  <p id="note" class="note" style="display:none"></p>
   <main id="grid" class="grid"></main>
 
   <template id="card-tpl">
@@ -24,6 +45,40 @@
     </div>
   </template>
 
-  <script src="./app.js" defer></script>
-</body>
-</html>
+  <script>
+    // ---- 基础与占位 ----
+    const BASE = '.';                       // /docs 下就用相对路径
+    const CASES_URL = BASE + '/cases.json'; // 工作流会把 data/cases.json 同步到 docs/cases.json
+
+    const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+        <rect width="100%" height="100%" fill="#f3f3f3"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#aaa" font-size="20">image pending</text>
+       </svg>`);
+
+    const tpl   = document.getElementById('card-tpl');
+    const grid  = document.getElementById('grid');
+    const note  = document.getElementById('note');
+    const search= document.getElementById('search');
+
+    let all = [];
+
+    const imgSrc = (id, which='after') => `${BASE}/images/samples/${id}-${which}.png`;
+
+    function normalizeCases(raw) {
+      // 支持数组 / 对象（取常见字段）/ 非法时返回空数组
+      try {
+        if (Array.isArray(raw)) return raw;
+        if (typeof raw === 'object' && raw) {
+          const keys = ['cases','items','data','list'];
+          for (const k of keys) if (Array.isArray(raw[k])) return raw[k];
+        }
+      } catch {}
+      return [];
+    }
+
+    function safeMap(list) {
+      return list.map((x, i) => ({
+        id:    x.id || x.slug || x.title || `case${String(i+1).padStart(2,'0')}`,
+        title: x.title || x.name || `Showcase ${i+1}`,
+        tags:  Array.isArray(x.tag
