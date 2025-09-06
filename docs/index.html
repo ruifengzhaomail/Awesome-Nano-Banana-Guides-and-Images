@@ -1,14 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Awesome Nano-banana — Gallery</title>
+  <meta name="description" content="Nano-banana（Gemini 2.5 Flash Image）精选案例图库：对比图 + 提示词，结构化可复用。">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Awesome Nano-banana — Gallery</h1>
+    <p class="sub">Data driven gallery. <a href="../">Back</a></p>
+    <input id="search" placeholder="搜索关键词 / Search…" />
+  </header>
 
-<!doctype html><html lang="zh-CN"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Awesome Nano-banana — Gallery</title>
-<link rel="stylesheet" href="styles.css">
-</head><body>
-<header>
-<h1>Awesome Nano‑banana — Gallery</h1>
-<p>Data driven gallery. <a href="../README.md">Back</a></p>
-<input id="q" placeholder="搜索关键字 / Search..."/>
-</header>
-<main id="grid"></main>
-<script src="app.js"></script>
-</body></html>
+  <main id="grid" class="grid"></main>
+
+  <template id="card-tpl">
+    <div class="card">
+      <img loading="lazy" alt="preview" />
+      <h3 class="title"></h3>
+      <div class="tags"></div>
+    </div>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
