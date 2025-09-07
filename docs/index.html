@@ -4,35 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Awesome Nano-banana — Gallery</title>
-  <style>
-    :root { --gap:16px; --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.06); }
-    body { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:#fafafa; color:#111; }
-    header { position:sticky; top:0; z-index:2; background:#fff; border-bottom:1px solid #eee; }
-    .inner { max-width:1200px; margin:0 auto; padding:18px var(--gap); }
-    h1 { margin:0 0 8px 0; font-size:28px; }
-    a.back { color:#2563eb; text-decoration:none; font-weight:600; }
-    #search { width:100%; padding:12px 14px; border:1px solid #e5e7eb; border-radius:12px; outline:none; }
-    main { max-width:1200px; margin:0 auto; padding:20px var(--gap) 60px; }
-    .grid { display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); }
-    .card { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; }
-    .thumb { aspect-ratio: 16/10; background:#f3f4f6; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-size:12px; }
-    .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-    .body { padding:14px; }
-    .title { margin:0 0 8px; font-size:18px; font-weight:700; }
-    .tags { display:flex; gap:8px; flex-wrap:wrap; }
-    .tag { font-size:12px; padding:4px 8px; border-radius:999px; background:#f3f4f6; color:#374151; }
-    .muted { color:#6b7280; font-size:12px; }
-  </style>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header>
-    <div class="inner">
-      <h1>Awesome Nano-banana — Gallery</h1>
-      <div class="muted">Data driven gallery. <a class="back" href="../">Back</a></div>
-      <div style="margin-top:10px"><input id="search" placeholder="搜索关键词 / Search..." /></div>
-    </div>
+    <h1>Awesome Nano-banana — Gallery</h1>
+    <p>Data driven gallery. <a href="../">Back</a></p>
+    <input id="q" type="search" placeholder="搜索关键词 / Search…" />
+    <div id="msg" class="hide"></div>
   </header>
-  <main><div id="grid" class="grid" aria-live="polite"></div></main>
-  <script src="./app.js" defer></script>
+
+  <main id="grid" class="grid"></main>
+
+  <script src="./app.js"></script>
 </body>
 </html>
