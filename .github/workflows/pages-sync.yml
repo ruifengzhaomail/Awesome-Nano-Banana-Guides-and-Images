@@ -1,27 +1,35 @@
 name: Pages sync (data -> docs)
+
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
     paths:
       - "data/cases.json"
+      - "images/**"
+      - "docs/**"
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Copy data -> docs
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare docs assets
         run: |
-          mkdir -p docs
+          mkdir -p docs/images
+          rsync -av --delete images/ docs/images/
           cp -f data/cases.json docs/cases.json
-      - name: Commit & push
+
+      - name: Commit & push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/cases.json
-          git commit -m "chore: sync cases.json -> docs" || echo "no changes"
-          git push
+          if [[ -n "$(git status --porcelain docs)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/cases.json docs/images
+            git commit -m "chore(pages): sync data -> docs"
+            git push
+          else
+            echo "No changes to commit."
+          fi
