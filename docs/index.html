@@ -4,185 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Awesome Nano-banana — Gallery</title>
-  <meta name="description" content="Nano-banana（Gemini 2.5 Flash Image）精选案例图库：对比图 + 提示词，结构化可复用。">
   <style>
-    :root{--fg:#111;--muted:#666;--border:#eee;--bg:#fff;--pill:#f5f5f5}
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial}
-    header{max-width:1120px;margin:24px auto 12px;padding:0 16px}
-    h1{margin:0 0 4px;font-size:28px}
-    .sub{margin:0 0 12px;color:var(--muted)}
-    #search{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;outline:none}
-    .grid{max-width:1120px;margin:16px auto 40px;padding:0 16px;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-    .card{border:1px solid var(--border);border-radius:14px;padding:10px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.03);transition:transform .15s ease}
-    .card:hover{transform:translateY(-2px)}
-    .card img{width:100%;height:160px;object-fit:cover;display:block;border-radius:10px;background:#fafafa}
-    .title{margin:10px 2px 6px;font-size:16px}
-    .tags{display:flex;flex-wrap:wrap;gap:6px}
-    .tag{font-size:12px;background:var(--pill);padding:4px 8px;border-radius:999px;color:#333;border:1px solid var(--border)}
-    .note{max-width:1120px;margin:8px auto 0;padding:0 16px;color:#b35a00;font-size:14px}
+    :root { --gap:16px; --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.06); }
+    body { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:#fafafa; color:#111; }
+    header { position:sticky; top:0; z-index:2; background:#fff; border-bottom:1px solid #eee; }
+    .inner { max-width:1200px; margin:0 auto; padding:18px var(--gap); }
+    h1 { margin:0 0 8px 0; font-size:28px; }
+    a.back { color:#2563eb; text-decoration:none; font-weight:600; }
+    #search { width:100%; padding:12px 14px; border:1px solid #e5e7eb; border-radius:12px; outline:none; }
+    main { max-width:1200px; margin:0 auto; padding:20px var(--gap) 60px; }
+    .grid { display:grid; gap:var(--gap); grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); }
+    .card { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; }
+    .thumb { aspect-ratio: 16/10; background:#f3f4f6; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-size:12px; }
+    .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .body { padding:14px; }
+    .title { margin:0 0 8px; font-size:18px; font-weight:700; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; }
+    .tag { font-size:12px; padding:4px 8px; border-radius:999px; background:#f3f4f6; color:#374151; }
+    .muted { color:#6b7280; font-size:12px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Awesome Nano-banana — Gallery</h1>
-    <p class="sub">Data driven gallery. <a href="../">Back</a></p>
-    <input id="search" placeholder="搜索关键词 / Search…" />
-  </header>
-
-  <p id="note" class="note" style="display:none"></p>
-  <main id="grid" class="grid"></main>
-
-  <template id="card-tpl">
-    <div class="card">
-      <img loading="lazy" alt="preview" />
-      <h3 class="title"></h3>
-      <div class="tags"></div>
+    <div class="inner">
+      <h1>Awesome Nano-banana — Gallery</h1>
+      <div class="muted">Data driven gallery. <a class="back" href="../">Back</a></div>
+      <div style="margin-top:10px"><input id="search" placeholder="搜索关键词 / Search..." /></div>
     </div>
-  </template>
-
-  <script>
-    const BASE = '.';                       // /docs 下相对路径
-    const CASES_URL = BASE + '/cases.json'; // 工作流会把 data/cases.json 同步到 docs/
-    const PLACEHOLDER = 'data:image/svg+xml;utf8,'+encodeURIComponent(
-      `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
-         <rect width="100%" height="100%" fill="#f3f3f3"/>
-         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#aaa" font-size="20">image pending</text>
-       </svg>`);
-
-    const grid  = document.getElementById('grid');
-    const note  = document.getElementById('note');
-    const search= document.getElementById('search');
-    const tpl   = document.getElementById('card-tpl');
-    let all = [];
-
-    // ---------- 工具 ----------
-    const slug = s => String(s||'').toLowerCase()
-      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/-+/g,'-');
-    const pad = (n,len=2)=>String(n).padStart(len,'0');
-    const uniq = arr => [...new Set(arr.filter(Boolean))];
-
-    function normalizeCases(raw){
-      try{
-        if(Array.isArray(raw)) return raw;
-        if(raw && typeof raw==='object'){
-          for(const k of ['cases','items','data','list']) if(Array.isArray(raw[k])) return raw[k];
-        }
-      }catch{}
-      return [];
-    }
-    function safeMap(list){
-      return list.map((x,i)=>({
-        id: x.id || x.slug || `case${pad(i+1)}`,
-        title: x.title || x.name || x.id || `Showcase ${i+1}`,
-        tags: Array.isArray(x.tags)?x.tags : (x.tag?[String(x.tag)]:[]),
-        images: Array.isArray(x.images)?x.images:[],
-      }));
-    }
-
-    function buildTryList(item){
-      const tries = [];
-
-      // 1) 数据里提供了绝对地址：优先用
-      const first = item.images && item.images[0];
-      const url = first && (first.src || first.url || first.href);
-      if(url && /^https?:\/\//i.test(url)) tries.push(url);
-
-      // 2) 根据 id/title 猜本地文件名
-      const baseFromId = slug(item.id);
-      const baseFromTitle = slug(item.title);
-      const numInId = String(item.id||'').match(/\d+/);
-      const numInTitle = String(item.title||'').match(/\d+/);
-      const n = numInId ? parseInt(numInId[0],10) : (numInTitle ? parseInt(numInTitle[0],10) : null);
-
-      const candidates = uniq([
-        baseFromId, baseFromTitle,
-        n!=null ? `case${pad(n,2)}` : '',
-        n!=null ? `case${pad(n,3)}` : '',
-      ]);
-
-      const EXT = ['png','jpg','jpeg','webp'];
-      const WHICH = ['after','before'];
-      for(const base of candidates){
-        for(const w of WHICH){
-          for(const ext of EXT){
-            tries.push(`${BASE}/images/samples/${base}-${w}.${ext}`);
-          }
-        }
-      }
-      return tries;
-    }
-
-    function loadWithFallback(img, sources){
-      img.dataset.left = JSON.stringify(sources);
-      const setNext = () => {
-        const arr = JSON.parse(img.dataset.left||'[]');
-        const next = arr.shift();
-        img.dataset.left = JSON.stringify(arr);
-        img.src = next || PLACEHOLDER;
-      };
-      img.onerror = setNext;
-      setNext();
-    }
-
-    function render(list){
-      grid.innerHTML='';
-      const frag = document.createDocumentFragment();
-      for(const it of list){
-        const node  = tpl.content.cloneNode(true);
-        const img   = node.querySelector('img');
-        const title = node.querySelector('.title');
-        const tags  = node.querySelector('.tags');
-
-        title.textContent = it.title || it.id || 'Showcase';
-        (it.tags||[]).slice(0,6).forEach(t=>{
-          const b = document.createElement('span');
-          b.className='tag'; b.textContent=t; tags.appendChild(b);
-        });
-
-        const tries = buildTryList(it);
-        if(tries.length===0){ img.src = PLACEHOLDER; }
-        else { loadWithFallback(img, tries); }
-
-        frag.appendChild(node);
-      }
-      grid.appendChild(frag);
-    }
-
-    async function boot(){
-      let usedFallback=false;
-      try{
-        const res = await fetch(CASES_URL,{cache:'no-store'});
-        if(!res.ok) throw new Error(res.status+' '+res.statusText);
-        let data = await res.json();
-        data = normalizeCases(data);
-        if(!data.length) throw new Error('cases.json empty or invalid structure');
-        all = safeMap(data);
-      }catch(e){
-        console.warn('[Gallery] cases.json load failed:', e);
-        // 占位 12 条
-        all = Array.from({length:12},(_,i)=>({ id:`case${pad(i+1)}`, title:`Showcase ${i+1}`, tags:['demo','nbg'] }));
-        usedFallback = true;
-      }
-      render(all);
-      if(usedFallback){
-        note.style.display='';
-        note.textContent='提示：未找到 docs/cases.json 或数据格式异常，已显示占位内容。'
-          +'确保已运行 “Pages sync (data + images)” 工作流把 data/cases.json 同步到 docs/。';
-      }
-    }
-
-    search.addEventListener('input',e=>{
-      const kw = e.target.value.trim().toLowerCase();
-      if(!kw) return render(all);
-      const hit = all.filter(x =>
-        (x.title||'').toLowerCase().includes(kw) ||
-        (x.id||'').toLowerCase().includes(kw) ||
-        (x.tags||[]).some(t=>(t+'').toLowerCase().includes(kw)));
-      render(hit);
-    });
-
-    boot();
-  </script>
+  </header>
+  <main><div id="grid" class="grid" aria-live="polite"></div></main>
+  <script src="./app.js" defer></script>
 </body>
 </html>
