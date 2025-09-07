@@ -1,32 +1,27 @@
-name: Pages sync (data + images)
-
+name: Pages sync (data -> docs)
 on:
-  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
-      - 'data/**'
-      - 'images/**'
-      - 'docs/**'
-      - '.github/workflows/pages-sync.yml'
+      - "data/cases.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Prepare docs assets
+      - name: Copy data -> docs
         run: |
-          set -e
-          mkdir -p docs/images
-          # 同步结构化数据到 docs 根
+          mkdir -p docs
           cp -f data/cases.json docs/cases.json
-          # 镜像 images/ 到 docs/images/（保持层级与文件名）
-          rsync -a --delete images/ docs/images/
-
-      - name: Commit & push changes to docs
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(pages): sync data & images to docs"
-          branch: main
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/cases.json
+          git commit -m "chore: sync cases.json -> docs" || echo "no changes"
+          git push
