@@ -1,35 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Awesome Nano-banana — Gallery</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header">
+  <header class="site-header">
     <h1>Awesome Nano-banana — Gallery</h1>
-    <p>Data driven gallery. <a href="../">Back</a></p>
-    <input id="search" type="search" placeholder="搜索关键词 / Search…" />
+    <p class="muted">Data driven gallery. <a href="../">Back</a></p>
+    <input id="search" class="search" placeholder="搜索关键词 / Search..." />
   </header>
 
-  <main id="grid" class="grid" aria-live="polite"></main>
+  <main id="grid" class="grid"></main>
 
-  <!-- 预览弹层 -->
-  <div id="lightbox" class="lightbox" hidden>
-    <div class="lightbox__content">
-      <button id="closeBtn" class="btn-close" aria-label="Close">×</button>
-      <div class="lightbox__images">
+  <!-- Viewer modal (默认隐藏) -->
+  <div id="viewer" aria-hidden="true">
+    <div class="sheet" role="dialog" aria-modal="true">
+      <button class="close-btn" data-close aria-label="Close">×</button>
+      <div class="cols">
         <figure>
-          <img id="imgBefore" alt="before"/>
+          <img data-role="before" alt="before" />
           <figcaption>Before</figcaption>
         </figure>
         <figure>
-          <img id="imgAfter" alt="after"/>
+          <img data-role="after" alt="after" />
           <figcaption>After</figcaption>
         </figure>
       </div>
-      <div id="lbMeta" class="meta"></div>
     </div>
   </div>
 
