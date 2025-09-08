@@ -1,13 +1,20 @@
 name: Pages sync (data -> docs)
 
 on:
+  workflow_dispatch: {}
   push:
-    branches: [ "main" ]
+    branches: [ main ]
     paths:
-      - "data/cases.json"
-      - "images/**"
-      - "docs/**"
-  workflow_dispatch:
+      - 'data/**'
+      - 'images/**'
+      - '.github/workflows/pages-sync.yml'
+
+permissions:
+  contents: write   # 关键：让 GITHUB_TOKEN 拥有推送权限
+
+concurrency:
+  group: pages-sync
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -15,21 +22,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # 需要完整历史用于 push
+          persist-credentials: true
 
-      - name: Prepare docs assets
+      - name: Prepare docs directory
         run: |
+          set -euxo pipefail
           mkdir -p docs/images
-          rsync -av --delete images/ docs/images/
-          cp -f data/cases.json docs/cases.json
+          # 同步根目录 images -> docs/images（没有也不报错）
+          if [ -d images ]; then
+            rsync -av --delete images/ docs/images/
+          fi
+          # 拷贝并校验 JSON；若 data/cases.json 缺失或不是数组，则给空数组兜底
+          if [ -f data/cases.json ]; then
+            # 若装了 jq 就校验并压缩；没有 jq 也不影响
+            if command -v jq >/dev/null 2>&1; then
+              jq -c '.' data/cases.json > docs/cases.json || echo "[]" > docs/cases.json
+            else
+              cp -f data/cases.json docs/cases.json || echo "[]" > docs/cases.json
+            fi
+          else
+            echo "[]" > docs/cases.json
+          fi
 
       - name: Commit & push if changed
         run: |
-          if [[ -n "$(git status --porcelain docs)" ]]; then
-            git config user.name  "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add docs/cases.json docs/images
-            git commit -m "chore(pages): sync data -> docs"
-            git push
+          set -eux
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/cases.json || true
+          git add docs/images     || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(sync): data -> docs"
+            git push origin HEAD:main
           else
             echo "No changes to commit."
           fi
