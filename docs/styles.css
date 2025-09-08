@@ -29,3 +29,54 @@ html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font:16p
 .lightbox figure { margin:0; background:#10121a; border:1px solid #252a3a; border-radius:12px; padding:8px; }
 .lightbox img { width:100%; height:auto; display:block; border-radius:10px; background:#0b0d14; }
 .meta { margin-top:10px; color:var(--muted); }
+
+/* --- Fix: modal viewer --- */
+#viewer {
+  position: fixed;
+  inset: 0;
+  display: none;                 /* 默认隐藏 */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.7);
+  z-index: 9999;
+}
+#viewer.is-open {                /* 打开时显示 */
+  display: flex;
+}
+#viewer .sheet {
+  position: relative;
+  width: min(1100px, 92vw);
+  max-height: 90vh;
+  background: #111;
+  padding: 16px;
+  border-radius: 12px;
+  overflow: auto;
+}
+#viewer .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+#viewer figure {
+  margin: 0;
+  background: #0b0b0b;
+  border-radius: 8px;
+  padding: 8px;
+}
+#viewer img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+#viewer .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
