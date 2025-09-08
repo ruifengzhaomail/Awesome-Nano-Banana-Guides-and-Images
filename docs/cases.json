@@ -1,16 +1,1 @@
-{
-  "cases": [
-    { "id": "nbg-01", "title": "Showcase 1",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case1/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-02", "title": "Showcase 2",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case2/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-03", "title": "Showcase 3",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case3/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-04", "title": "Showcase 4",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case4/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-05", "title": "Showcase 5",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case5/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-06", "title": "Showcase 6",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case6/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-07", "title": "Showcase 7",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case7/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-08", "title": "Showcase 8",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case8/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-09", "title": "Showcase 9",  "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case9/output0.jpg",  "alt": "preview"}] },
-    { "id": "nbg-10", "title": "Showcase 10", "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case10/output0.jpg", "alt": "preview"}] },
-    { "id": "nbg-11", "title": "Showcase 11", "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case11/output0.jpg", "alt": "preview"}] },
-    { "id": "nbg-12", "title": "Showcase 12", "tags": ["demo","nbg"], "images": [{ "src": "https://raw.githubusercontent.com/PicoTrex/Awesome-Nano-Banana-images/main/images/case12/output0.jpg", "alt": "preview"}] }
-  ]
-}
+[{"id":"case01","title":"Showcase 1","prompt_zh":"示例中文 Prompt","prompt_en":"Example English prompt","images":[{"src":"images/samples/case01-after.png","alt":"after","type":"after"}],"tags":["demo","nbg"]},{"id":"case02","title":"Showcase 2","prompt_zh":"……","prompt_en":"……","images":[{"src":"images/samples/case02-after.png","alt":"after","type":"after"}],"tags":["demo"]}]
