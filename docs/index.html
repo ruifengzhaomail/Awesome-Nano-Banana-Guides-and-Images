@@ -1,21 +1,38 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Awesome Nano-banana — Gallery</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header>
+  <header class="header">
     <h1>Awesome Nano-banana — Gallery</h1>
     <p>Data driven gallery. <a href="../">Back</a></p>
-    <input id="q" type="search" placeholder="搜索关键词 / Search…" />
-    <div id="msg" class="hide"></div>
+    <input id="search" type="search" placeholder="搜索关键词 / Search…" />
   </header>
 
-  <main id="grid" class="grid"></main>
+  <main id="grid" class="grid" aria-live="polite"></main>
 
-  <script src="./app.js"></script>
+  <!-- 预览弹层 -->
+  <div id="lightbox" class="lightbox" hidden>
+    <div class="lightbox__content">
+      <button id="closeBtn" class="btn-close" aria-label="Close">×</button>
+      <div class="lightbox__images">
+        <figure>
+          <img id="imgBefore" alt="before"/>
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure>
+          <img id="imgAfter" alt="after"/>
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
+      <div id="lbMeta" class="meta"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
